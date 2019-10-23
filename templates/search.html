@@ -10,20 +10,22 @@
     <script src="{% static 'main.js' %}"></script>
 </head>
 <body>
+        {% for city in city_weathers %}
     <div class="forecast-table">
         <div class="container">
             <div class="forecast-container">
-                <div class="today forecast">{{city_weather.description}}<br>
+                <div class="today forecast">{{city.description}}<br>
                     <div class="forecast-header">
                     </div> <!-- .forecast-header -->
                     <div class="forecast-content">
-                        <div class="location">{{city_weather.city}}</div>
+                        <div class="location">{{city.city}}</div>
                         <div class="degree">
-                            <div class="num">{{city_weather.temprature}}<sup>o</sup>C</div>
+                            <div class="num">{{city.temprature}}<sup>o</sup>C</div>
                             <div class="forecast-icon">
-                                <img src="http://openweathermap.org/img/w/{{city_weather.icon}}.png" alt="" width=90>
-
+                                <img src="http://openweathermap.org/img/w/{{city.icon}}.png" alt="" width=90>
+                           {% endfor %}
                             </div>
-                            </div>
+                        </div>
+                            
 </body>
 </html>
